@@ -1,0 +1,12 @@
+Commands for 1.3:
+kmeta@ubuntu:~/my_mcpat/mcpat$ ./mcpat -infile ProcessorDescriptionFiles/ARM_A9_2GHz.xml -print_level 1 > ARM_A9_2GHz_lvl1.txt
+kmeta@ubuntu:~/my_mcpat/mcpat$ ./mcpat -infile ProcessorDescriptionFiles/ARM_A9_2GHz.xml -print_level 5 > ARM_A9_2GHz_lvl5.txt
+kmeta@ubuntu:~/my_mcpat/mcpat$ ./mcpat -infile ProcessorDescriptionFiles/ARM_A9_2GHz.xml -print_level 3 > ARM_A9_2GHz_lvl3.txt
+kmeta@ubuntu:~/my_mcpat/mcpat$ ./mcpat -infile ProcessorDescriptionFiles/Xeon.xml -print_level 3 > xeon_lvl3.txt
+
+
+Commands for 2.1:
+kmeta@ubuntu:~/my_mcpat$ Scripts/GEM5ToMcPAT.py stats.txt config.json ./mcpat/ProcessorDescriptionFiles/inorder_arm.xml -o specbzip_l1d_size=32kB_l1i_size=32kB_l2_size=512kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64.xml
+
+
+
