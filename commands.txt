@@ -6,7 +6,12 @@ kmeta@ubuntu:~/my_mcpat/mcpat$ ./mcpat -infile ProcessorDescriptionFiles/Xeon.xm
 
 
 Commands for 2.1:
-kmeta@ubuntu:~/my_mcpat$ Scripts/GEM5ToMcPAT.py stats.txt config.json ./mcpat/ProcessorDescriptionFiles/inorder_arm.xml -o specbzip_l1d_size=32kB_l1i_size=32kB_l2_size=512kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64.xml
+Scripts/GEM5ToMcPAT.py stats.txt config.json ./mcpat/ProcessorDescriptionFiles/inorder_arm.xml -o specsjengl1d_size=32kB_l1i_size=32kB_l2_size=2048kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64.xml
+
+
+./mcpat/mcpat -infile specsjengl1d_size\=32kB_l1i_size\=32kB_l2_size\=2048kB_1i_assoc\=2_l1d_assoc\=2_l2_assoc\=8_cacheline_size\=64.xml -print_level 5 > l1d_size=32kB_l1i_size=32kB_l2_size=2048kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64.txt
+
+
 
 
 
