@@ -32,10 +32,21 @@ a) Πρώτο ερώτημα
  
 Όσον αφορά το leakage βρήκαμε πως υπάρχουν δύο μηχανισμοί, το _Subthreshold leakage_ και το _Gate leakage_. Παρατηρήσαμε επίσης ότι εξαρτάται από πολλές παραμέτρους το _leakage_ και ότι το _Subthreshold leakage_ έχει μεγαλύτερη τιμή από το _Gate leakage_ σε κάθε περίπτωση.  
 
+The **dynamic power** (switching power) dissipated per unit of time by a chip is C·V2·A·f, where C is the capacitance being switched per clock cycle, V is voltage, A is the Activity Factor indicating the average number of switching events undergone by the transistors in the chip (as a unit-less quantity) and f is the switching frequency. Voltage is therefore the main determinant of power usage and heating. The voltage required for stable operation is determined by the frequency at which the circuit is clocked, and can be reduced if the frequency is also reduced. Dynamic power alone does not account for the total power of the chip, however, as there is also static power, which is primarily because of various leakage currents. Due to static power consumption and asymptotic execution time it has been shown that the energy consumption of a piece of software shows convex energy behavior, i.e., there exists an optimal CPU frequency at which energy consumption is minimal. Leakage current has become more and more important as transistor sizes have become smaller and threshold voltage levels lower. A decade ago, dynamic power accounted for approximately two-thirds of the total chip power. The power loss due to leakage currents in contemporary CPUs and SoCs tend to dominate the total power consumption. In the attempt to control the leakage power, high-k metal-gates and power gating have been common methods.
+
+Dynamic power refers to the power dissipated due to voltage and, although it was the main power dissipation in the past, in contemporary CPUs, due to lower voltages and smaller transistors, the leakage current is also a factor in total power.
+
+**Leakage power** consumption is the power consumed by the sub threshold currents and by reverse biased diodes in a CMOS transistor. The leakage power of a CMOS logic gate does not depend on input transition or load capacitance and hence it remains constant for a logic cell.
+
+Dynamic power only cares about the frequency, the voltage and the activity factor, which means that a bigger program does not necessarily translates to bigger power consumption if  it does not change the switching events rate (on a per unit of time measurement. Of course in total it will take more time to complete, thus probably bigger power dissipated). At the same time leakage power is constant and does not change, so again, on a per unit measurement, the power dissipated will be the same on both programs!
+
+If we run two different programs on the same processor only the dynamic power may change since only the A may change. The leakage power is constant.
+
 ## TODO   
 (Αν τρέξετε διαφορετικά προγράμματα σε έναν επεξεργαστή ποιο θα 
 επηρεαστεί  και  πώς;  Έχει  σημασία  πόσο  μεγάλο  (σε  χρονική  διάρκεια  εκτέλεσης)  είναι  ένα 
 πρόγραμμα; )
+// I think I answered both of these questions above so feel free to delete this comment if you think the answers are acceptable!
 
 Το παρακάτω McPAT Framework μας βοηθάει στο να αντιληφθούμε περαιτέρω την λειτουργία του McPAT.
 
@@ -46,7 +57,14 @@ a) Πρώτο ερώτημα
 <a name="1_2"></a>
 b) Δεύτερο ερώτημα   
 
-Αναζητώντας στην βιβλιογραφία και έπειτα από σκέψη καταλήξαμε πως για να απαντήσουμε σε αυτό το ερώτημα θα χρειαστεί να γνωρίζουμε πληροφορίες για το sleep mode του κάθε επεξεργαστή. Ουσιαστικά, με σωστή χρήση του sleep mode έχουμε μεγαλύτερη διάρκεια μπαταρίας. Με τα αποτελέσματα που παράγει το McPAT θα μπορούσαμε να δούμε τις τιμές για το total power των δύο επεξεργαστών -με μια απόκλιση βέβαια από την πραγματικότητα- και να αποφανθούμε με επιφύλαξη για την διάρκεια της μπαταρίας. Αυτό βέβαια υπό την προϋπόθεση ότι οι δύο επεξεργαστές έχουν την ίδια λειτουργία για sleep,dream και snore mode. 
+Αναζητώντας στην βιβλιογραφία και έπειτα από σκέψη καταλήξαμε πως για να απαντήσουμε σε αυτό το ερώτημα θα χρειαστεί να γνωρίζουμε πληροφορίες για το sleep mode του κάθε επεξεργαστή. Ουσιαστικά, με σωστή χρήση του sleep mode έχουμε μεγαλύτερη διάρκεια μπαταρίας. Με τα αποτελέσματα που παράγει το McPAT θα μπορούσαμε να δούμε τις τιμές για το total power των δύο επεξεργαστών -με μια απόκλιση βέβαια από την πραγματικότητα- και να αποφανθούμε με επιφύλαξη για την διάρκεια της μπαταρίας. Αυτό βέβαια υπό την προϋπόθεση ότι οι δύο επεξεργαστές έχουν την ίδια λειτουργία για sleep,dream και snore mode. Επομένως ναι εφόσον τα 4 W και τα 40 W αναφέρονται σε peak power τότε προφανώς αυτό δεν σημαίνει ότι ο επεξεργαστής καταναλώνει διαρκώς αυτή την ισχύ. Για να αποφανθούμε θα πρέπει να υπολογίσουμε τη μέση κατανάλωση κάθε επεξεργαστή και αυτό μπορεί να εξαρτηθεί και από την διεργασία που έχει να κάνει.
+
+Το McPAT μπορεί να μας δώσει στοιχεία όπως το Peak power, το total leakage, ωστόσο το runtime dynamic και το total leakage μπορούν να μας δώσουν μία πολύ καλύτερη ιδέα για την μέση ισχύ που καταναλώνει ο επεξεργαστής. Χρείαζεται η χρήση αυτών των δεδομένων μέσω ενός μαθηματικού τύπου για να καταλήξουμε σε ένα συγκρίσιμο αποτέλεσμα ανα μονάδα χρόνου.
+
+There are several factors contributing to the CPU power consumption; they include dynamic power consumption, short-circuit power consumption, and power loss due to transistor leakage currents:
+
+P_{cpu}=P_{dyn}+P_{sc}+P_{leak}}
+
 
 <a name="1_3"></a>
 c) Τρίτο ερώτημα    
@@ -70,7 +88,9 @@ b) Δεύτερο ερώτημα
 <a name="3"></a>
 # Βιβλιογραφία
 - https://ieeexplore.ieee.org/document/5375438/authors  
-- https://www.hpl.hp.com/research/mcpat/micro09.pdf  
+- https://www.hpl.hp.com/research/mcpat/micro09.pdf 
+- https://asic-soc.blogspot.com/2008/03/leakage-power-trends.html#:~:text=Leakage%20power%20consumption%20is%20the,a%20short%20amount%20of%20time.
+- https://en.wikipedia.org/wiki/Dynamic_frequency_scaling 
 
 <a name="4"></a>
 # Κριτική 
