@@ -42,12 +42,6 @@ Dynamic power only cares about the frequency, the voltage and the activity facto
 
 If we run two different programs on the same processor only the dynamic power may change since only the A may change. The leakage power is constant.
 
-## TODO   
-(Αν τρέξετε διαφορετικά προγράμματα σε έναν επεξεργαστή ποιο θα 
-επηρεαστεί  και  πώς;  Έχει  σημασία  πόσο  μεγάλο  (σε  χρονική  διάρκεια  εκτέλεσης)  είναι  ένα 
-πρόγραμμα; )
-// I think I answered both of these questions above so feel free to delete this comment if you think the answers are acceptable!
-
 Το παρακάτω McPAT Framework μας βοηθάει στο να αντιληφθούμε περαιτέρω την λειτουργία του McPAT.
 
 ![McPAT Framework](https://github.com/lkmeta/computer-architecture-lab3/blob/main/McPAT%20framework.png)
@@ -76,10 +70,25 @@ c) Τρίτο ερώτημα
 <a name="2"></a>
 ## Βήμα 2ο
 
-Για το συγκεκριμένο βήμα χρησιμοποιήθηκαν από το προηγούμενο εργαστήριο τα πειράματα που προέκυψαν. Ωστόσο, επειδή στο προηγούμενο εργαστήριο πήραμε περίπου 20 προσομοιώσεις για κάθε benchmark σκεφτήκαμε πως τώρα δεν υπάρχει λόγος να πάρουμε όλες αυτές τις προσομοιώσεις για αυτό το εργαστήριο. Συνεπώς, πήραμε τις 3 καλύτερες προσομοιώσεις του gem5 που έδωσαν την μικρότερη τιμή για κάθε benchmark στο [_cost_function_](https://github.com/Mavioux/computer-architecture-lab2#3) και τις χρησιμοποιήσαμε σε αυτό το εργαστήριο.   
+Για το συγκεκριμένο βήμα χρησιμοποιήθηκαν από το προηγούμενο εργαστήριο τα πειράματα που προέκυψαν. Ωστόσο, επειδή στο προηγούμενο εργαστήριο πήραμε περίπου 20 προσομοιώσεις για κάθε benchmark σκεφτήκαμε πως τώρα η καλύτερη λύση είναι να δημιουργήσουμε μερικά scripts και να δουλέψουμε με αυτά ευκολότερα. Συνεπώς, χρησιμοποιήσαμε αυτά τα [_Scipts_](https://github.com/lkmeta/computer-architecture-lab3/tree/main/2.1/Scripts) για να προκύψουν τα παρακάτω αποτελέσματα.   
 
 <a name="2_1"></a>
 a) Πρώτο ερώτημα    
+Τα αποτελέσματα για τις προσομοιώσεις του κάθε Benchmark που υλοποιηθήκαν από το προηγούμενο εργαστήριο χρησιμοποιήθηκαν για να προκύψουν οι μετρήσεις με το McPAT. Οι τιμές των ```Core``` και ```L2``` για το _Area_, _Subthreshold Leakage_, _Gate Leakage_ και _Runtime Dynamic_ σε κάθε ένα από τα Benchmarks φαίνονται στα παρακάτω αρχεία:
+
+   - [**specbzip**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/core_l2_results/results_specbzip)
+   - [**spechmmer**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/core_l2_results/results_spechmmer)
+   - [**speclibm**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/core_l2_results/results_speclibm)
+   - [**specmcf**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/core_l2_results/results_specmcf)
+   - [**specsjeng**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/core_l2_results/results_specsjeng)
+   
+Έπειτα, με χρήση των ```print_energy_res.sh``` και ```get_energy.sh``` Sripts καταφέραμε να υπολογίσουμε και να πάρουμε άμεσα την ενέργεια και το EDP όπως φαίνεται στα παρακάτω αρχεία για κάθε περίπτωση:
+
+   - [**specbzip**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/energy_results/results_specbzip)
+   - [**spechmmer**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/energy_results/results_spechmmer)
+   - [**speclibm**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/energy_results/results_speclibm)
+   - [**specmcf**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/energy_results/results_specmcf)
+   - [**specsjeng**](https://github.com/lkmeta/computer-architecture-lab3/blob/main/2.1/energy_results/results_specsjeng)
 
 
 <a name="2_2"></a>
