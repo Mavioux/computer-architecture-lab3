@@ -1,0 +1,168 @@
+"benchmark": "l1d_size=32kB_l1i_size=32kB_l2_size=1024kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 4.59384 mm^2
+      Subthreshold Leakage = 0.696764 W
+      Gate Leakage = 0.0036123 W
+      Runtime Dynamic = 0.0266219 W
+L2
+      Area = 4.1658 mm^2
+      Subthreshold Leakage = 0.00278925 W
+      Gate Leakage = 0.000397114 W
+      Runtime Dynamic = 0.00255286 W
+
+"benchmark": "l1d_size=32kB_l1i_size=32kB_l2_size=512kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 4.59384 mm^2
+      Subthreshold Leakage = 0.696764 W
+      Gate Leakage = 0.0036123 W
+      Runtime Dynamic = 0.0266219 W
+L2
+      Area = 2.12555 mm^2
+      Subthreshold Leakage = 0.00148306 W
+      Gate Leakage = 0.000201415 W
+      Runtime Dynamic = 0.00165101 W
+
+"benchmark": "l1d_size=32kB_l1i_size=64kB_l2_size=1024kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 6.98565 mm^2
+      Subthreshold Leakage = 1.098 W
+      Gate Leakage = 0.00726281 W
+      Runtime Dynamic = 0.0311557 W
+L2
+      Area = 4.1658 mm^2
+      Subthreshold Leakage = 0.00278925 W
+      Gate Leakage = 0.000397114 W
+      Runtime Dynamic = 0.000928734 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=1024kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 7.22483 mm^2
+      Subthreshold Leakage = 1.098 W
+      Gate Leakage = 0.00726281 W
+      Runtime Dynamic = 0.361081 W
+L2
+      Area = 4.1658 mm^2
+      Subthreshold Leakage = 0.00278925 W
+      Gate Leakage = 0.000397114 W
+      Runtime Dynamic = 0.0017225 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=2048kB_l1i_assoc=1_l1d_assoc=1_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 7.15183 mm^2
+      Subthreshold Leakage = 1.09545 W
+      Gate Leakage = 0.0072454 W
+      Runtime Dynamic = 0.321968 W
+L2
+      Area = 7.0038 mm^2
+      Subthreshold Leakage = 0.00472789 W
+      Gate Leakage = 0.000571604 W
+      Runtime Dynamic = 0.015958 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=2048kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=2_cacheline_size=64",
+Core:
+      Area = 7.22483 mm^2
+      Subthreshold Leakage = 1.098 W
+      Gate Leakage = 0.00726281 W
+      Runtime Dynamic = 0.361081 W
+L2
+      Area = 7.69091 mm^2
+      Subthreshold Leakage = 0.00465773 W
+      Gate Leakage = 0.000566123 W
+      Runtime Dynamic = 0.0022988 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=2048kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=4_cacheline_size=64",
+Core:
+      Area = 7.22483 mm^2
+      Subthreshold Leakage = 1.098 W
+      Gate Leakage = 0.00726281 W
+      Runtime Dynamic = 0.361081 W
+L2
+      Area = 7.68591 mm^2
+      Subthreshold Leakage = 0.0046776 W
+      Gate Leakage = 0.000568258 W
+      Runtime Dynamic = 0.00230136 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=2048kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=128",
+Core:
+      Area = 11.0402 mm^2
+      Subthreshold Leakage = 1.18338 W
+      Gate Leakage = 0.00728232 W
+      Runtime Dynamic = 0.587254 W
+L2
+      Area = 38.4333 mm^2
+      Subthreshold Leakage = 0.0163995 W
+      Gate Leakage = 0.00351474 W
+      Runtime Dynamic = 0.0062776 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=2048kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=32",
+Core:
+      Area = 5.13381 mm^2
+      Subthreshold Leakage = 0.793678 W
+      Gate Leakage = 0.00471982 W
+      Runtime Dynamic = 0.188905 W
+L2
+      Area = 6.37949 mm^2
+      Subthreshold Leakage = 0.00445064 W
+      Gate Leakage = 0.000433207 W
+      Runtime Dynamic = 0.0022595 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=2048kB_l1i_assoc=4_l1d_assoc=4_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 6.85161 mm^2
+      Subthreshold Leakage = 0.904051 W
+      Gate Leakage = 0.00536875 W
+      Runtime Dynamic = 0.356471 W
+L2
+      Area = 7.0038 mm^2
+      Subthreshold Leakage = 0.00472789 W
+      Gate Leakage = 0.000571604 W
+      Runtime Dynamic = 0.00221075 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=512kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 7.22483 mm^2
+      Subthreshold Leakage = 1.098 W
+      Gate Leakage = 0.00726281 W
+      Runtime Dynamic = 0.064535 W
+L2
+      Area = 2.12555 mm^2
+      Subthreshold Leakage = 0.00148306 W
+      Gate Leakage = 0.000201415 W
+      Runtime Dynamic = 0.00162282 W
+
+"benchmark": "l1d_size=64kB_l1i_size=32kB_l2_size=512kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 7.22483 mm^2
+      Subthreshold Leakage = 1.098 W
+      Gate Leakage = 0.00726281 W
+      Runtime Dynamic = 0.361081 W
+L2
+      Area = 2.12555 mm^2
+      Subthreshold Leakage = 0.00148306 W
+      Gate Leakage = 0.000201415 W
+      Runtime Dynamic = 0.00134092 W
+
+"benchmark": "l1d_size=64kB_l1i_size=64kB_l2_size=2048kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 9.61665 mm^2
+      Subthreshold Leakage = 1.49924 W
+      Gate Leakage = 0.0109133 W
+      Runtime Dynamic = 0.361153 W
+L2
+      Area = 7.0038 mm^2
+      Subthreshold Leakage = 0.00472789 W
+      Gate Leakage = 0.000571604 W
+      Runtime Dynamic = 0.00226081 W
+
+"benchmark": "l1d_size=64kB_l1i_size=64kB_l2_size=512kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64",
+Core:
+      Area = 9.61665 mm^2
+      Subthreshold Leakage = 1.49924 W
+      Gate Leakage = 0.0109133 W
+      Runtime Dynamic = 0.0693463 W
+L2
+      Area = 2.12555 mm^2
+      Subthreshold Leakage = 0.00148306 W
+      Gate Leakage = 0.000201415 W
+      Runtime Dynamic = 0.000609833 W
+

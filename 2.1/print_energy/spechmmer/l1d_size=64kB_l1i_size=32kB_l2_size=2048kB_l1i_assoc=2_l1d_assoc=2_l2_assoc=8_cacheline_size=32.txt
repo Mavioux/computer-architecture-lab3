@@ -1,0 +1,4 @@
+Reading simulation time from: McPAT_files/spechmmer/l1d_size=64kB_l1i_size=32kB_l2_size=2048kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=32.txt
+Reading simulation time from: benchmarks/spechmmer/l1d_size=64kB_l1i_size=32kB_l2_size=2048kB_l1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=32/stats.txt
+leakage: 0.845989 W, dynamic: 0.212805 W and runtime: 0.119194 sec
+energy is 126.201892 mJ

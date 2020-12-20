@@ -1,0 +1,4 @@
+Reading simulation time from: McPAT_files/specbzip/l1d_size=64kB_l1i_size=64kB_l2_size=1024kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64.txt
+Reading simulation time from: benchmarks/specbzip/l1d_size=64kB_l1i_size=64kB_l2_size=1024kB_1i_assoc=2_l1d_assoc=2_l2_assoc=8_cacheline_size=64/stats.txt
+leakage: 1.556050 W, dynamic: 0.334429 W and runtime: 0.161992 sec
+energy is 306.242474 mJ
