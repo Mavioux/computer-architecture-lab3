@@ -94,13 +94,22 @@ a) Πρώτο ερώτημα
 
 Το καλύτερο EDP για κάθε Benchmark φαίνεται στην τελευταία στήλη του παρακάτω πίνακα:
 
-| Benchmark Name | l1_dsize (kB) | l1_icache (kB) | l2_size () | l1d_assoc | l1i_assoc | l2_assoc | cacheline_size | BEST EDP |
+| Benchmark Name | l1_dsize (kB) | l1_icache (kB) | l2_size (kB) | l1d_assoc | l1i_assoc | l2_assoc | cacheline_size (kB) | BEST EDP |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | **specbzip**  | 32	| 32	| 2048	| 2	| 2	| 8	| 64	| 23.46504 |
 | **spechmmer** | 32	| 32	| 1024	| 2	| 2	| 8	| 64	| 0.000003 |
 | **speclibm**  | 32	| 32	| 1024	| 1	| 1	| 2	| 64	| 0.091957 |
 | **specmcf**   | 32	| 32	| 512  	| 2	| 2	| 8	| 64	| 13.615531|
 | **specsjeng** | 32	| 32	| 512 	| 2	| 2	| 8	| 64	|408.829745|
+
+Παρατηρώντας τον παραπάνω πίνακα προκύπτει ότι μάλλον η καλύτερη λύση για να έχουμε το μικρότερο δυνατό EDP είναι όταν έχουμε τις ακόλουθες τιμές:
+   - L1 data cache size = 32 kB
+   - L1 instruction cache size = 32 kB
+   - L2 cache size = 512 kB 
+   - L1 data cache associativity = 2
+   - L1 instruction cache associativity  = 2
+   - L2 cache associativity = 8
+   - cache line size = 64 kB
 
 <a name="2_2"></a>
 b) Δεύτερο ερώτημα  
