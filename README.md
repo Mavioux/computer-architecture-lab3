@@ -139,8 +139,29 @@ b) Δεύτερο ερώτημα
 
 ![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/cacheline.png)
 
+---
 
+Συνεχίζοντας, βρήκαμε το _EDP_ μέσω του ```get_energy.sh``` script για όλα τα Benchmarks και για κάθε προσομοίωση με σκοπό να δημιουργήσουμε τα παρακάτω διαγράμματα στο Matlab.
 
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Specbzip
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_specbzip.jpg)
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Spechmmer
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_spechmmer.jpg)
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Speclibm
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_speclibm.jpg)
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Specmcf
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_specmcf.jpg)
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Specsjeng
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_specsjeng.jpg)
 
 
 <a name="3"></a>
