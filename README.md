@@ -121,6 +121,28 @@ a) Πρώτο ερώτημα
 <a name="2_2"></a>
 b) Δεύτερο ερώτημα  
 
+Στο συγκεκριμένο ερώτημα βρήκαμε το _power peak_ μέσω του ```get_peak_power.sh``` script για όλα τα Benchmarks και για κάθε προσομοίωση με σκοπώ να δημιουργήσουμε τα παρακάτω διαγράμματα στο Matlab.
+
+###Διάγραμμα Power Peak συναρτήσει L1 data and instruction cache associativity
+
+![image](./Matlab Graphs/L1 data and instruction cache associativity.png "L1 data and instruction cache associativity")
+
+###Διάγραμμα Power Peak συναρτήσει L2 cache associativity
+
+![image](./Matlab Graphs/L2 cache associativity.png "L2 cache associativity")
+
+###Διάγραμμα Power Peak συναρτήσει L2 cache size
+
+![image](./Matlab Graphs/L2 cache size.png "L2 cache size")
+
+###Διάγραμμα Power Peak συναρτήσει cache line size
+
+![image](./Matlab Graphs/cacheline.png "cacheline")
+
+
+
+
+
 <a name="3"></a>
 # Βιβλιογραφία
 - https://ieeexplore.ieee.org/document/5375438/authors  
