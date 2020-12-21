@@ -8,9 +8,6 @@
 ### Περιεχόμενα
    1. [Βήμα 1ο](#1)
       1. [Πρώτο ερώτημα](#1_1)
-         1. [](#1_1_1)
-         2. [](#1_1_2)
-         3. [](#1_1_3)
       2. [Δεύτερο ερώτημα](#1_2)
       3. [Τρίτο ερώτημα](#1_3)
    2. [Βήμα 2ο](#2)
@@ -28,7 +25,6 @@
 <a name="1_1"></a>
 a) Πρώτο ερώτημα  
 
-<a name="1_1_1"></a>
 Αναζητώντας βιβλιογραφία για το dynamic power συμπεράναμε πως υπάρχουν 3 είδη power dissipation, το _dynamic_, το _static_ και το _short-circuit power_. Πιο συγκεκριμένα, προέκυψαν τα παρακάτω σημεία που θεωρούμε πως περιέχουν αναλυτικά την ζητούμενα πληροφορία:
 
 **Power Modeling**  
@@ -44,13 +40,11 @@ Dynamic power refers to the power dissipated due to voltage and, although it was
 **Leakage power** consumption is the power consumed by the sub threshold currents and by reverse biased diodes in a CMOS transistor. The leakage power of a CMOS logic gate does not depend on input transition or load capacitance and hence it remains constant for a logic cell.
 
 
-<a name="1_1_2"></a>
 If we run two different programs on the same processor only the dynamic power may change since only the A may change. The leakage power is constant.  
 
 Σύμφωνα με το παραπάνω, αν τρέξουμε δύο διαφορετικά προγράμματα σε έναν επεξεργαστή θα επηρεαστεί μόνο το dynamic power και καθόλου το leakage.
 
 
-<a name="1_1_3"></a>
 Dynamic power only cares about the frequency, the voltage and the activity factor, which means that a bigger program does not necessarily translates to bigger power consumption if  it does not change the switching events rate (on a per unit of time measurement. Of course in total it will take more time to complete, thus probably bigger power dissipated). At the same time leakage power is constant and does not change, so again, on a per unit measurement, the power dissipated will be the same on both programs!  
 
 Με βάση όσα αναφέρονται στην προηγούμενη παράγραφο, συμπεραίνουμε πως δεν έχει σημασία η χρονική διάρκεια εκτέλεσης για την καταναλισκόμενη ισχύ. Προφανώς όμως, η συνολική ενέργεια είναι μεγαλύτερη στο πιο χρονοβόρο πρόγραμμα.
