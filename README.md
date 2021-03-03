@@ -37,11 +37,18 @@ Dynamic power refers to the power dissipated due to voltage and, although it was
 
 Όσον αφορά το leakage βρήκαμε πως υπάρχουν δύο μηχανισμοί, το _Subthreshold leakage_ και το _Gate leakage_. Παρατηρήσαμε επίσης ότι εξαρτάται από πολλές παραμέτρους το _leakage_ και ότι το _Subthreshold leakage_ έχει μεγαλύτερη τιμή από το _Gate leakage_ σε κάθε περίπτωση.  
 
-**Leakage power** consumption is the power consumed by the sub threshold currents and by reverse biased diodes in a CMOS transistor. The leakage power of a CMOS logic gate does not depend on input transition or load capacitance and hence it remains constant for a logic cell.
+**Leakage power** consumption is the power consumed by the sub threshold currents and by reverse biased diodes in a CMOS transistor. The leakage power of a CMOS logic gate does not depend on input transition or load capacitance and hence it remains constant for a logic cell. Leakage may refer to any power leakage that may occur in manufacturing process. It is every power leakage that may happen in the circuit.
 
-Dynamic power only cares about the frequency, the voltage and the activity factor, which means that a bigger program does not necessarily translates to bigger power consumption if  it does not change the switching events rate (on a per unit of time measurement. Of course in total it will take more time to complete, thus probably bigger power dissipated). At the same time leakage power is constant and does not change, so again, on a per unit measurement, the power dissipated will be the same on both programs!
 
-If we run two different programs on the same processor only the dynamic power may change since only the A may change. The leakage power is constant.
+If we run two different programs on the same processor only the dynamic power may change since only the A may change. The leakage power is constant.  
+
+Σύμφωνα με το παραπάνω, αν τρέξουμε δύο διαφορετικά προγράμματα σε έναν επεξεργαστή θα επηρεαστεί μόνο το dynamic power και καθόλου το leakage.
+
+
+Dynamic power only cares about the frequency, the voltage and the activity factor, which means that a bigger program does not necessarily translates to bigger power consumption if  it does not change the switching events rate (on a per unit of time measurement. Of course in total it will take more time to complete, thus probably bigger power dissipated). At the same time leakage power is constant and does not change, so again, on a per unit measurement, the power dissipated will be the same on both programs!  
+
+Με βάση όσα αναφέρονται στην προηγούμενη παράγραφο, συμπεραίνουμε πως δεν έχει σημασία η χρονική διάρκεια εκτέλεσης για την καταναλισκόμενη ισχύ. Προφανώς όμως, η συνολική ενέργεια είναι μεγαλύτερη στο πιο χρονοβόρο πρόγραμμα.
+
 
 Το παρακάτω McPAT Framework μας βοηθάει στο να αντιληφθούμε περαιτέρω την λειτουργία του McPAT.
 
@@ -54,7 +61,7 @@ b) Δεύτερο ερώτημα
 
 Αναζητώντας στην βιβλιογραφία και έπειτα από σκέψη καταλήξαμε πως για να απαντήσουμε σε αυτό το ερώτημα θα χρειαστεί να γνωρίζουμε πληροφορίες για το sleep mode του κάθε επεξεργαστή. Ουσιαστικά, με σωστή χρήση του sleep mode έχουμε μεγαλύτερη διάρκεια μπαταρίας. Με τα αποτελέσματα που παράγει το McPAT θα μπορούσαμε να δούμε τις τιμές για το total power των δύο επεξεργαστών -με μια απόκλιση βέβαια από την πραγματικότητα- και να αποφανθούμε με επιφύλαξη για την διάρκεια της μπαταρίας. Αυτό βέβαια υπό την προϋπόθεση ότι οι δύο επεξεργαστές έχουν την ίδια λειτουργία για sleep,dream και snore mode. Επομένως ναι εφόσον τα 4 W και τα 40 W αναφέρονται σε peak power τότε προφανώς αυτό δεν σημαίνει ότι ο επεξεργαστής καταναλώνει διαρκώς αυτή την ισχύ. Για να αποφανθούμε θα πρέπει να υπολογίσουμε τη μέση κατανάλωση κάθε επεξεργαστή και αυτό μπορεί να εξαρτηθεί και από την διεργασία που έχει να κάνει.
 
-Το McPAT μπορεί να μας δώσει στοιχεία όπως το Peak power, το total leakage, ωστόσο το runtime dynamic και το total leakage μπορούν να μας δώσουν μία πολύ καλύτερη ιδέα για την μέση ισχύ που καταναλώνει ο επεξεργαστής. Χρείαζεται η χρήση αυτών των δεδομένων μέσω ενός μαθηματικού τύπου για να καταλήξουμε σε ένα συγκρίσιμο αποτέλεσμα ανα μονάδα χρόνου.
+Το McPAT μπορεί να μας δώσει στοιχεία όπως το Peak power, το total leakage, ωστόσο το runtime dynamic και το total leakage μπορούν να μας δώσουν μία πολύ καλύτερη ιδέα για την μέση ισχύ που καταναλώνει ο επεξεργαστής. Χρειάζεται η χρήση αυτών των δεδομένων μέσω ενός μαθηματικού τύπου για να καταλήξουμε σε ένα συγκρίσιμο αποτέλεσμα ανα μονάδα χρόνου. Έτσι μέσω του McPAT και με την αξιοποίηση κάποιου μαθηματικού τύπου θα μπορούσαμε να οδηγηθούμε στο ζητούμενο αποτέλεσμα. Πέραν αυτού όμως θα μπορούσε να δώσει ακόμα καλύτερες προσεγγίσεις αν γνωρίζαμε με μεγαλύτερη ακρίβεια τα χαρακτηριστικά του hardware, κάτι το οποίο μπορούν να μας δώσουν τα αρχεία που παράγει ο gem5.
 
 There are several factors contributing to the CPU power consumption; they include dynamic power consumption, short-circuit power consumption, and power loss due to transistor leakage currents:
 
@@ -64,13 +71,13 @@ P_{cpu}=P_{dyn}+P_{sc}+P_{leak}}
 <a name="1_3"></a>
 c) Τρίτο ερώτημα    
 
-Μπορεί το Xeon να είναι 40 φορές γρηγορότερο από το A9 αλλά θα πρέπει να ληφθεί υπόψιν και το leakage που έχουμε σε κάθε περίπτωση. Για τον Xeon έχουμε ```Total Leakage = 36.8319 W``` ενώ για τον A9 έχουμε ```Total Leakage = 0.108687 W``` που είναι τουλάχιστον 300 φορές μικρότερο από το πρώτο. Αυτό μας οδηγεί στο συμπέρασμα ότι δεν είναι πιο energy efficient ο Xeon από τον Α9.
+Μπορεί ο Xeon να είναι 40 φορές γρηγορότερος από ο A9 αλλά θα πρέπει να ληφθεί υπόψιν και το leakage που έχουμε σε κάθε περίπτωση. Για τον Xeon έχουμε ```Total Leakage = 36.8319 W``` ενώ για τον A9 έχουμε ```Total Leakage = 0.108687 W``` που είναι τουλάχιστον 300 φορές μικρότερο από το πρώτο. Αυτό μας οδηγεί στο συμπέρασμα ότι δεν είναι πιο energy efficient ο Xeon από τον Α9.
 
 ---
 <a name="2"></a>
 ## Βήμα 2ο
 
-Για το συγκεκριμένο βήμα χρησιμοποιήθηκαν από το προηγούμενο εργαστήριο τα πειράματα που προέκυψαν. Ωστόσο, επειδή στο προηγούμενο εργαστήριο πήραμε περίπου 20 προσομοιώσεις για κάθε benchmark σκεφτήκαμε πως τώρα η καλύτερη λύση είναι να δημιουργήσουμε μερικά scripts και να εργαστούμε με αυτά ευκολότερα. Συνεπώς, τα παρακάτω αποτελέσματα προέκυψνα με χρήση αυτών των [_Scipts_](https://github.com/lkmeta/computer-architecture-lab3/tree/main/2.1/Scripts).
+Για το συγκεκριμένο βήμα χρησιμοποιήθηκαν από το προηγούμενο εργαστήριο τα πειράματα που προέκυψαν. Ωστόσο, επειδή στο προηγούμενο εργαστήριο πήραμε περίπου 20 προσομοιώσεις για κάθε benchmark σκεφτήκαμε πως τώρα η καλύτερη λύση είναι να δημιουργήσουμε μερικά scripts και να εργαστούμε με αυτά ευκολότερα. Συνεπώς, τα παρακάτω αποτελέσματα προέκυψαν με χρήση αυτών των [_Scipts_](https://github.com/lkmeta/computer-architecture-lab3/tree/main/2.1/Scripts).
 
 
 <a name="2_1"></a>
@@ -110,9 +117,55 @@ a) Πρώτο ερώτημα
    - L1 instruction cache associativity  = 2
    - L2 cache associativity = 8
    - cache line size = 64 kB
+   
+Χρησιμοποιήσαμε την τιμή EDP αντί για την κατανάλωση ενέργειας, επειδή θεωρήσαμε ότι είναι πιο αξιόπιστο αποτέλεσμα. Ούτως ή άλλως δεν υπάρχει ιδιαίτερη διαφορά, όπως μας εξηγήθηκε και στο εργαστήριο.
 
 <a name="2_2"></a>
 b) Δεύτερο ερώτημα  
+
+Στο συγκεκριμένο ερώτημα βρήκαμε το _power peak_ μέσω του ```get_peak_power.sh``` script για όλα τα Benchmarks και για κάθε προσομοίωση με σκοπό να δημιουργήσουμε τα παρακάτω διαγράμματα στο Matlab.
+
+### Διάγραμμα Power Peak συναρτήσει L1 data and instruction cache associativity
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/L1%20data%20and%20instruction%20cache%20associativity.png)
+
+### Διάγραμμα Power Peak συναρτήσει L2 cache associativity
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/L2%20cache%20associativity.png)
+
+### Διάγραμμα Power Peak συναρτήσει L2 cache size
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/L2%20cache%20size.png)
+
+### Διάγραμμα Power Peak συναρτήσει cache line size
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/cacheline.png)
+
+---
+
+Συνεχίζοντας, βρήκαμε το _EDP_ μέσω του ```get_energy.sh``` script για όλα τα Benchmarks και για κάθε προσομοίωση με σκοπό να δημιουργήσουμε τα παρακάτω διαγράμματα στο Matlab.
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Specbzip
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_specbzip.jpg)
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Spechmmer
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_spechmmer.jpg)
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Speclibm
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_speclibm.jpg)
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Specmcf
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_specmcf.jpg)
+
+### Διάγραμμα EDP συναρτήσει των Benchamrks για το Specsjeng
+
+![image](https://github.com/lkmeta/computer-architecture-lab3/blob/main/Matlab%20Graphs/edp_-_specsjeng.jpg)
+
+**Παρατήρηση:** Αρχικά, θεωρούμε πως είναι σημαντικό να αναφερθεί ότι στην βιβλιογραφία που διαβάσαμε είδαμε πως οι προσομοιώσεις αποκλίνουν από την πραγματικότητα σε μικρό βαθμό και άλλοτε σε μεγαλύτερο. Επιπλέον, είναι λογικό και αναμενόμενο πως εφόσον μιλάμε για προσομοιωτή θα υπάρξουν σφάλματα, μιας και χρησιμοποιεί τη γλώσσα python η οποία ειναι high level γλώσσα, σε αντίθεση με μια γλώσσα χαμηλότερου επιπέδου, όπως c, assembly, verilog. Κάτι ακόμη που ενδέχεται να προκαλεί σφάλματα είναι η μοντελοποίηση του κάθε μοντέλου επεξεργαστή στο McPAT. Τέλος ας μην ξεχνάμε ότι και ο gem5 είναι ένας προσομοιωτής, επομένως οποιαδήποτε σφάλματα υπάρχουν στα αρχεία που εξάγει, πολλαπλασιάζονται κατά την είσοδο τους στο mcpat. Προσπαθήσαμε με πολλαπλές προσομοιώσεις να μειώσουμε αυτά τα σφάλματα και να βγάλουμε όσο το δυνατόν καλύτερα συμπεράσματα.
 
 <a name="3"></a>
 # Βιβλιογραφία
@@ -124,3 +177,8 @@ b) Δεύτερο ερώτημα
 <a name="4"></a>
 # Κριτική 
 
+Το συγκεκριμένο εργαστήριο ήταν μια ενδιαφέρουσα εισαγωγή στον τρόπο λειτουργίας και χρήσης της ενέργειας που ακολουθεί ένας επεξεργαστής με σκοπό την βελτιστοποίηση των αποτελεσμάτων διαφόρων benchmarks. Συγκεκριμένα, μας έδειξε την αξία του dynamic power και του leakage στους επεξεργαστές και πως μπουρούμε να χρησιμοποιήσουμε αυτές τις πληροφορίες για να προκύψουν συμπεράσματα για την καταναλισκόμενη ισχύ. Επιπλέον, η χρήση του McPAT μας βοήθησε να κατανοήσουμε σε μεγαλύτερο βάθος τι εννοούμε με τον όρο του energy efficient για έναν επεξεργαστή και τι συμπεράσματα προκύπτουν για αυτό.
+
+Συνεχίζοντας, - στο δεύτερο βήμα του εργαστηρίου - κληθήκαμε να υλοποιήσουμε προσομοιώσεις για τα Benchmarks που είχαμε χρησιμοποιήσει με το gem5 στο 2ο εργαστήριο. Ωστόσο, για να διευκολύνουμε αυτή την διαδικασία μάθαμε πως να χρησιμοποιούμε μερικά Scripts κατάλληλα για να παράγουμε τα αποτελέσματα και να κρατήσουμε όσα χαρακτηριστικά χρειάζονται ευκολότερα. Παράλληλα, σε αυτό το βήμα κατανοήσαμε τι είναι το EDP και πως επηρεάζουν οι παράμετροι που τροποποιήσαμε το power. Όλα αυτά χρησιμοποιήθηκαν για να προκύψουν συμπεράσματα για την κατανάλωση ενέργειας.
+
+Γενικά, μέσα από αυτό το εργαστήριο γνωρίσαμε την σημασία και την χρησιμότητα πολλών χαρακτηριστικών του επεξεργαστή και πως επηρεάζονται μέσα από παραμέτρους που μέχρι τώρα δεν είχαμε ασχοληθεί ξανά. Συγχρόνως, η εργασία μας φάνηκε ενδιαφέρουσα και δίνει εναύσματα για περαιτέρω αναζήτηση πάνω σε όλα αυτά. Νομίζουμε όμως ότι ο δρόμος που ακολουθήσαμε, παρόλο που απαιτεί περισσότερο χρόνο και προσομοιώσεις για να καταλήξει στο βέλτιστο αποτέλεσμα, αποτελεί μια ικανοποιητική ανάλυση στο συγκεκριμένο εργαστήριο. Τέλος, η πρώτη επαφή με το McPAT αλλά και όλα τα υπόλοιπα εργαλεία που χρησιμοποιήσαμε σε αυτό αλλά και στα προηγούμενα εργαστήρια, ήταν αναμφισβήτητα σημαντική και ενδιαφέρουσα καθώς πιστεύουμε πως θα μας απασχολήσουν στην μελλοντική ενασχόληση με το αντικείμενο.
